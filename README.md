@@ -15,24 +15,24 @@
 
 ### **Entropy Analysis**
 - **Entropy scoring** with interpretation:
-- 6.0-7.0 → Possible compression
-- <6.0 → Probably raw data
+  - 6.0-7.0 → Possible compression
+  - <6.0 → Probably raw data
 
 ### **Anti-Analysis Detection**
 - **Anti-Debug**:
-- IsDebuggerPresent checks
-- PEB/NtGlobalFlag inspection
-- INT3/SEH tricks detection
+  - IsDebuggerPresent checks
+  - PEB/NtGlobalFlag inspection
+  - INT3/SEH tricks detection
   
 - **Anti-VM** (25+ techniques):
-- CPUID fingerprinting
-- VMware/VirtualBox/Hyper-V specific checks
-- Hardware/MAC/BIOS verification
+  - CPUID fingerprinting
+  - VMware/VirtualBox/Hyper-V specific checks
+  - Hardware/MAC/BIOS verification
 
 - **Anti-Sandbox** (20+ techniques):
-- Sandbox process/driver detection
-- Environment fingerprinting
-- Timing/behavior checks
+  - Sandbox process/driver detection
+  - Environment fingerprinting
+  - Timing/behavior checks
 
 ### **Shellcode Identification**
 - Position-independent code patterns
