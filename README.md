@@ -1,52 +1,75 @@
-# PE Defender Analyzer  
+# PE Defender Analyzer 🔍 
 
 ![PEiD Plugin](https://img.shields.io/badge/PEiD-Plugin-blue) 
 ![PowerBasic](https://img.shields.io/badge/PowerBasic-DLL-green)
 
-Advanced PE analysis plugin for PEiD that detects packers, anti-analysis techniques, and PE anomalies.
+**A PEiD plugin for advanced executable analysis**  
+*Detects packers, anti-analysis techniques, and PE anomalies with precision*
 
-## 🔍 Features
+## 🚀 Features
 
-### 🧰 **Packer Detection**
-- **60+ signatures** (UPX, Themida, VMProtect, ASProtect, etc.)
-- Section name analysis
-- Deep file scanning
+### 🔐 **Packer & Protector Detection**
+- **60+ packer signatures** (UPX, ASProtect, Themida, VMProtect, etc.)
+- Section name pattern matching
+- Full file signature scans
 
 ### 📊 **Entropy Analysis**
-- Calculates file entropy:
-  - `>7.0` → Likely **packed/encrypted**
-  - `6.0-7.0` → Possible **compression** 
-  - `<6.0` → Probably **raw data**
+- **Entropy scoring** with interpretation:
+  - `>7.0` → Likely packed/encrypted
+  - `6.0-7.0` → Possible compression
+  - `<6.0` → Probably raw data
 
-### 🚫 **Anti-Analysis Detection**
-| Technique Type       | Examples Detected |
-|----------------------|-------------------|
-| **Anti-Debug**       | IsDebuggerPresent, PEB checks, INT3 traps |
-| **Anti-VM**          | CPUID checks, VMware/VirtualBox detection |
-| **Anti-Sandbox**     | Sandbox names, RAM checks, sleep detection |
+### 🕵️ **Anti-Analysis Detection**
+- **Anti-Debug**:
+  - `IsDebuggerPresent` checks
+  - PEB/NtGlobalFlag inspection
+  - INT3/SEH tricks detection
+  
+- **Anti-VM** (25+ techniques):
+  - CPUID fingerprinting
+  - VMware/VirtualBox/Hyper-V specific checks
+  - Hardware/MAC/BIOS verification
 
-### ⚠️ **PE Anomalies**
-- Header inconsistencies
-- Suspicious section characteristics
-- Import table anomalies
-- Checksum verification
+- **Anti-Sandbox** (20+ techniques):
+  - Sandbox process/driver detection
+  - Environment fingerprinting
+  - Timing/behavior checks
+
+### � **Shellcode Identification**
+- Position-independent code patterns
+- Common stub signatures
+- Polymorphic code indicators
+- Code section entropy analysis
+
+### 📜 **PE Header Forensics**
+- Structural anomalies
+- Section inconsistencies
+- Import table verification
+- Checksum validation
+
+## 🛠️ Technical Implementation
+- **PEiD plugin architecture**
+- Memory-mapped file analysis
+- Hybrid signature/heuristic detection
+- Win32 API powered (PowerBasic)
 
 ## 📥 Installation
 1. Place DLL in PEiD's `plugins` folder
 2. Launch PEiD and analyze target file
-3. Report saves automatically as `[filename]_analysis_report.txt`
+3. **Report** generates automatically as `[filename]_analysis_report.txt`
 
-## 📝 Sample Report
+## 📝 Sample Output
 ```text
 [PACKER DETECTION]
 - Detected: UPX (section UPX0)
 
 [ENTROPY ANALYSIS]
-File entropy: 7.89 - High entropy
+File entropy: 7.892 - High entropy (packed/encrypted)
 
 [ANTI-DEBUG TECHNIQUES]
-- PEB.BeingDebugged check
-- INT3 breakpoint detection
+- PEB.BeingDebugged check found
+- SEH anti-debug trick detected
 
 [PE HEADER ANALYSIS]
 - Suspicious SizeOfImage discrepancy
+- Section overlap detected
