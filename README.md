@@ -18,7 +18,6 @@
 
   - 6.0-7.0 → Possible compression
   - <6.0 → Probably raw data
-  - >7.0 → Likely packed/encrypted
   
 ### **Anti-Analysis Detection**
 - **Anti-Debug**:
