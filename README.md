@@ -1,4 +1,4 @@
-# PE Defender Analyzer 🔍 
+# PE Defender Analyzer 
 
 ![PEiD Plugin](https://img.shields.io/badge/PEiD-Plugin-blue) 
 ![PowerBasic](https://img.shields.io/badge/PowerBasic-DLL-green)
@@ -6,20 +6,20 @@
 **A PEiD plugin for advanced executable analysis**  
 *Detects packers, anti-analysis techniques, and PE anomalies with precision*
 
-## 🚀 Features
+## Features
 
-### 🔐 **Packer & Protector Detection**
+### **Packer & Protector Detection**
 - **60+ packer signatures** (UPX, ASProtect, Themida, VMProtect, etc.)
 - Section name pattern matching
 - Full file signature scans
 
-### 📊 **Entropy Analysis**
+### **Entropy Analysis**
 - **Entropy scoring** with interpretation:
   - `>7.0` → Likely packed/encrypted
   - `6.0-7.0` → Possible compression
   - `<6.0` → Probably raw data
 
-### 🕵️ **Anti-Analysis Detection**
+### **Anti-Analysis Detection**
 - **Anti-Debug**:
   - `IsDebuggerPresent` checks
   - PEB/NtGlobalFlag inspection
@@ -35,30 +35,30 @@
   - Environment fingerprinting
   - Timing/behavior checks
 
-### � **Shellcode Identification**
+### **Shellcode Identification**
 - Position-independent code patterns
 - Common stub signatures
 - Polymorphic code indicators
 - Code section entropy analysis
 
-### 📜 **PE Header Forensics**
+### **PE Header Forensics**
 - Structural anomalies
 - Section inconsistencies
 - Import table verification
 - Checksum validation
 
-## 🛠️ Technical Implementation
+## Technical Implementation
 - **PEiD plugin architecture**
 - Memory-mapped file analysis
 - Hybrid signature/heuristic detection
 - Win32 API powered (PowerBasic)
 
-## 📥 Installation
+## Installation
 1. Place DLL in PEiD's `plugins` folder
 2. Launch PEiD and analyze target file
 3. **Report** generates automatically as `[filename]_analysis_report.txt`
 
-## 📝 Sample Output
+## Sample Output
 ```text
 [PACKER DETECTION]
 - Detected: UPX (section UPX0)
