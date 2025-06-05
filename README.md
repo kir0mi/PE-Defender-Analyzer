@@ -16,7 +16,7 @@
 ### **Entropy Analysis**
 - **Entropy scoring** with interpretation:
 
-  - 6.0-7.0 → Possible compression
+  - 6.0-7.0 → Possible compression (>7.0 → Likely packed/encrypted)
   - <6.0 → Probably raw data
   
 ### **Anti-Analysis Detection**
