@@ -57,19 +57,3 @@
 1. Place DLL in PEiD's `plugins` folder
 2. Launch PEiD and analyze target file
 3. **Report** generates automatically as `[filename]_analysis_report.txt`
-
-## Sample Output
-```text
-[PACKER DETECTION]
-- Detected: UPX (section UPX0)
-
-[ENTROPY ANALYSIS]
-File entropy: 7.892 - High entropy (packed/encrypted)
-
-[ANTI-DEBUG TECHNIQUES]
-- PEB.BeingDebugged check found
-- SEH anti-debug trick detected
-
-[PE HEADER ANALYSIS]
-- Suspicious SizeOfImage discrepancy
-- Section overlap detected
