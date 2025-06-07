@@ -1,4 +1,4 @@
-# PE Defender Analyzer 
+# PE Defender Analyzer.
 
 ![PEiD Plugin](https://img.shields.io/badge/PEiD-Plugin-blue) 
 ![PowerBasic](https://img.shields.io/badge/PowerBasic-DLL-green)
